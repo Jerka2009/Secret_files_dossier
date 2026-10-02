@@ -1,0 +1,334 @@
+@font-face {
+    font-family: 'LumiosTypewriter';
+    src: url('./assets/fonts/LumiosTypewriter-Old.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'LumiosTypewriter-Glitch';
+    src: url('./assets/fonts/LumiosTypewriter-Tape.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body {
+    background-image: url('./assets/images/web_bg.png');
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'LumiosTypewriter';
+}
+
+.header {
+    width: auto;
+    height: 125px;
+    display: flex;
+    background-image: url('./assets/images/headerImg.png');
+    justify-content: center;
+}
+.header_panel {
+    background-color: #262626;
+    height: 40px;
+    border-bottom: 2px solid wheat;
+    margin-top: -10px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 40px 30px 0;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.document {
+    width: 400px;
+    height: 600px;
+    flex-shrink: 0;
+    background-image: url('./assets/images/noteImg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.document_icon_bg {
+    width: 256px;
+    height: 256px;
+    flex-shrink: 0;
+    background-image: url('./assets/images/icon_note.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 5deg;
+}
+
+.document_icon {
+    width: 186px;
+    height: 186px;
+    flex-shrink: 0;
+    border-radius: 20px;
+}
+
+.monster_name {
+    padding: 10px 15px;
+    font-size: 22px;
+    flex-shrink: 0;
+    rotate: -2deg;
+}
+
+.monster_description {
+    width: 100%;
+    max-width: 420px;
+    flex: 1 1 auto;
+    min-height: 0;
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    rotate: -2deg;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+    font-family: 'LumiosTypewriter-Glitch';
+}
+
+.monster_description::-webkit-scrollbar {
+    width: 8px;
+}
+.monster_description::-webkit-scrollbar-track {
+    background: transparent;
+}
+.monster_description::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+}
+
+/* группа: кнопка + подкнопки */
+.panel-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-btn {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.panel-btn:hover {
+    background-color: #2a2a2a;
+}
+
+.panel-btn.active {
+    background-color: #3a3a3a;
+    border-color: #666;
+}
+
+.sub-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 15px;
+    border-left: 2px solid #333;
+    margin-left: 8px;
+}
+
+.panel-group.open .sub-buttons {
+    display: flex;
+}
+
+.sub-btn {
+    padding: 7px 10px;
+    background-color: #0f0f0f;
+    color: #ccc;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+    align-items: flex-start;
+}
+
+.files_list {
+    background-color: black;
+    width: 250px;
+    /* height: auto; — УБИРАЕМ это свойство */
+    max-height: 80vh; /* Максимальная высота — 80% от высоты экрана. Можно изменить на нужное значение, например, 600px */
+    overflow-y: auto; /* Включает вертикальную прокрутку, если контент не помещается */
+    overflow-x: hidden; /* Скрывает горизонтальную прокрутку, чтобы не ломать верстку */
+
+    margin-right: -30px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+.files_list::-webkit-scrollbar {
+    width: 8px;
+}
+.files_list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.files_list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); /* Светлый полупрозрачный ползунок для темного фона */
+    border-radius: 4px;
+}
+.files_list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.imgs_list {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 4px;
+    border-color: #484848;
+}
+.img_item {
+    width: 128;
+    height: 128;
+
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    will-change: transform;
+    z-index: 0;
+}
+.img_item:hover {
+    transition-duration: 0.5s;
+    transform: scale(2.5);
+    z-index: 1;
+}
+.credits {
+    text-align: center;
+    text-decoration: underline;
+    color: wheat;
+    font-family: 'LumiosTypewriter-Glitch';
+}
+
+.tags_container {
+    background-color: #262626;
+    display: flex;
+    align-self: center;
+    border-radius: 20px;
+    border: 2px solid wheat;
+    flex-direction: column;
+    align-items: stretch;
+    width: 400px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.classEntity {
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid green;
+    color: green;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    font-family: 'LumiosTypewriter-Glitch';
+}
+.dataEntity {
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid yellow;
+    color: yellow;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    font-family: 'LumiosTypewriter-Glitch';
+}
+.sizeEntity {
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+.otherEntity {
+    background-color: black;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    padding: 10px;
+    width: 100%;
+    max-width: 250px;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: 'LumiosTypewriter-Glitch';
+}
+
+.imgs_list::-webkit-scrollbar {
+    width: 8px;
+}
+.imgs_list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.imgs_list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+}
+
+.entity_type_container {
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}

@@ -1,0 +1,530 @@
+/* =========================================================
+   ШРИФТЫ
+   ========================================================= */
+@font-face {
+    font-family: 'LumiosTypewriter';
+    src: url('./assets/fonts/LumiosTypewriter-Old.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'LumiosTypewriter-Glitch';
+    src: url('./assets/fonts/LumiosTypewriter-Tape.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========================================================
+   БАЗА / СБРОС
+   ========================================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #0d0d0d;
+    background-image: url('./assets/images/web_bg.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    font-family: 'LumiosTypewriter', 'Courier New', monospace;
+    color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   ШАПКА
+   ========================================================= */
+.header {
+    width: 100%;
+    height: clamp(80px, 13vw, 125px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets/images/headerImg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header_panel {
+    width: 100%;
+    height: clamp(30px, 4vw, 40px);
+    background-color: #262626;
+    border-bottom: 2px solid wheat;
+    margin-top: -10px;
+}
+
+/* =========================================================
+   ОСНОВНОЙ КОНТЕЙНЕР
+   ========================================================= */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(18px, 3vw, 40px);
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 30px) clamp(16px, 3vw, 40px);
+}
+
+/* =========================================================
+   ЗАПИСКА (DOCUMENT)
+   ========================================================= */
+.document {
+    flex: 0 1 auto;
+    width: min(400px, 92vw);
+    aspect-ratio: 400 / 600;
+    max-height: 85dvh;
+
+    background-image: url('./assets/images/noteImg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-left: clamp(0px, 2vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: clamp(18px, 3vw, 30px) clamp(20px, 4vw, 40px);
+    overflow: hidden;
+}
+
+.document_icon_bg {
+    width: min(256px, 62%);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    background-image: url('./assets/images/icon_note.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    rotate: 5deg;
+}
+
+.document_icon {
+    width: 73%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.monster_name {
+    padding: 10px 15px;
+    font-size: clamp(16px, 2.4vw, 22px);
+    flex-shrink: 0;
+    rotate: -2deg;
+    text-align: center;
+}
+
+.monster_description {
+    width: 100%;
+    max-width: 420px;
+    flex: 1 1 auto;
+    min-height: 0;
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(12px, 2vw, 20px) clamp(14px, 2.5vw, 25px);
+    rotate: -2deg;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.4;
+    font-size: clamp(12px, 1.5vw, 15px);
+    font-family: 'LumiosTypewriter-Glitch', monospace;
+    -webkit-overflow-scrolling: touch;
+}
+
+.monster_description::-webkit-scrollbar {
+    width: 8px;
+}
+.monster_description::-webkit-scrollbar-track {
+    background: transparent;
+}
+.monster_description::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+}
+
+/* =========================================================
+   ПАНЕЛЬ КНОПОК
+   ========================================================= */
+.panel-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.panel-btn {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: clamp(13px, 1.4vw, 15px);
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.panel-btn:hover {
+    background-color: #2a2a2a;
+}
+
+.panel-btn.active {
+    background-color: #3a3a3a;
+    border-color: #666;
+}
+
+.sub-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 15px;
+    border-left: 2px solid #333;
+    margin-left: 8px;
+}
+
+.panel-group.open .sub-buttons {
+    display: flex;
+}
+
+.sub-btn {
+    padding: 7px 10px;
+    background-color: #0f0f0f;
+    color: #ccc;
+    border: 1px solid #262626;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: clamp(12px, 1.2vw, 13px);
+    text-align: left;
+    cursor: pointer;
+}
+
+.sub-btn:hover {
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+/* =========================================================
+   ПРАВАЯ КОЛОНКА
+   ========================================================= */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 2vw, 20px);
+    flex: 1 1 260px;
+    min-width: 0;
+    max-width: 480px;
+    align-items: stretch;
+}
+
+/* =========================================================
+   СПИСОК ФАЙЛОВ
+   ========================================================= */
+.files_list {
+    background-color: black;
+    width: 100%;
+    max-width: 250px;
+    max-height: 80vh;
+    max-height: 80dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: 0;
+    border-radius: 4px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.files_list::-webkit-scrollbar {
+    width: 8px;
+}
+.files_list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.files_list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+.files_list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================================
+   ГАЛЕРЕЯ
+   ========================================================= */
+.imgs_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: clamp(12px, 2.5vw, 25px);
+    padding: clamp(12px, 2vw, 20px);
+    background-color: black;
+    border-radius: 4px;
+    border: 1px solid #484848;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.img_item {
+    width: clamp(64px, 11vw, 128px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    will-change: transform;
+    z-index: 0;
+}
+
+/* Эффект увеличения — только там, где есть настоящий курсор */
+@media (hover: hover) and (pointer: fine) {
+    .img_item:hover {
+        transform: scale(2.2);
+        z-index: 5;
+    }
+}
+
+/* =========================================================
+   CREDITS / ТЕГИ / СУЩНОСТИ
+   ========================================================= */
+.credits {
+    text-align: center;
+    text-decoration: underline;
+    color: wheat;
+    font-family: 'LumiosTypewriter-Glitch', monospace;
+    font-size: clamp(12px, 1.4vw, 16px);
+    padding: 0 12px;
+}
+
+.tags_container {
+    background-color: #262626;
+    display: flex;
+    align-self: center;
+    border-radius: 20px;
+    border: 2px solid wheat;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(400px, 100%);
+    justify-content: center;
+    padding: 8px;
+    gap: 6px;
+}
+
+.classEntity,
+.dataEntity,
+.sizeEntity,
+.otherEntity {
+    background-color: black;
+    border-radius: 5px;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;
+    font-family: 'LumiosTypewriter-Glitch', monospace;
+    font-size: clamp(12px, 1.4vw, 16px);
+}
+
+.classEntity {
+    border: 1px solid green;
+    color: green;
+}
+
+.dataEntity {
+    border: 1px solid yellow;
+    color: yellow;
+}
+
+.sizeEntity {
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+}
+
+.otherEntity {
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    width: 100%;
+    max-width: min(250px, 100%);
+    max-height: 60dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.entity_type_container {
+    width: min(200px, 100%);
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+/* =========================================================
+   АДАПТИВ
+   ========================================================= */
+
+/* Узкие ноутбуки / планшеты в ландшафте */
+@media (max-width: 1100px) {
+    .main-container {
+        gap: clamp(16px, 3vw, 28px);
+        padding: clamp(16px, 3vw, 26px);
+    }
+
+    .document {
+        margin-left: 0;
+        width: min(360px, 46vw);
+    }
+
+    .right-column {
+        flex: 1 1 240px;
+    }
+}
+
+/* Планшеты в портрете, крупные телефоны */
+@media (max-width: 860px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 16px 32px;
+    }
+
+    .document {
+        width: min(420px, 94vw);
+        max-height: none;
+        margin-left: 0;
+    }
+
+    .right-column {
+        width: 100%;
+        max-width: 480px;
+        align-items: stretch;
+    }
+
+    .files_list {
+        max-width: 100%;
+        max-height: 50dvh;
+    }
+
+    .tags_container {
+        width: min(480px, 100%);
+        align-self: center;
+    }
+
+    .imgs_list {
+        justify-content: center;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 480px) {
+    .header {
+        height: clamp(64px, 22vw, 90px);
+    }
+
+    .document {
+        width: 96vw;
+        padding: 16px 20px;
+    }
+
+    .document_icon_bg {
+        width: min(220px, 65%);
+    }
+
+    .monster_name {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .monster_description {
+        padding: 10px 12px;
+        font-size: 12.5px;
+    }
+
+    .panel-btn {
+        padding: 9px 10px;
+    }
+
+    .imgs_list {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .img_item {
+        width: clamp(56px, 22vw, 84px);
+    }
+
+    .tags_container {
+        border-radius: 14px;
+        padding: 6px;
+    }
+
+    .classEntity,
+    .dataEntity,
+    .sizeEntity,
+    .otherEntity {
+        padding: 8px;
+        font-size: 12.5px;
+    }
+}
+
+/* Очень низкие экраны (ландшафт телефона) */
+@media (max-height: 520px) and (orientation: landscape) {
+    .header {
+        height: 70px;
+    }
+
+    .document {
+        width: min(320px, 55vw);
+    }
+
+    .files_list {
+        max-height: 60dvh;
+    }
+}
+
+/* Уважение к настройкам пользователя */
+@media (prefers-reduced-motion: reduce) {
+    .img_item,
+    .panel-btn {
+        transition: none;
+    }
+}

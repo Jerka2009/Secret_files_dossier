@@ -1,0 +1,5 @@
+[
+  { "id": "backrooms", "title": "backrooms", "file": "backrooms.txt" },
+  { "id": "minecraft",   "title": "minecraft",    "file": "minecraft.txt" },
+  { "id": "SCP",   "title": "SCP",    "file": "SCP.txt" }
+]
