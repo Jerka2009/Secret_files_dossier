@@ -1,0 +1,10 @@
+{
+  "title": "Secret files",
+  "description": "Веб-проект в стиле 'досье на монстров' и аномалии. Он представляет собой страницу с каталогом сущностей из вселенных SCP, Backrooms и Minecraft, где каждый объект открывается как отдельное 'досье' с описанием, классом/категорией, признаками и галереей скриншотов.\n\nЭто личный пет-проект, созданный в стиле исследовательской базы данных о сущностях, аномалиях и угрозах.\n\nДокументация по монстрам здесь -> https://github.com/Jerka2009/Secret_files_dossier/raw/refs/heads/main/Monsters_documentation.docx",
+  "images": [
+    "assets/portfolio/screenshot-1.png",
+    "assets/portfolio/screenshot-2.png"
+  ],
+  "demo": "None",
+  "github": "https://github.com/Jerka2009/Secret_files_dossier"
+}
